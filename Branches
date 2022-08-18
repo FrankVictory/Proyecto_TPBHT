@@ -1,7 +1,121 @@
-echo "# Proyecto_TPBHT" >> README.md 
-git init 
-git add README.md 
-git commit -m "first commit" 
-git branch -M main 
-git remote add origin https://github.com/FrankVictory/Proyecto_TPBHT.git
- git push - u origen principal 
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Clases;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.ArrayList;
+
+/**
+ *
+ * @author pacov
+ */
+public class Archivo {
+        public void GrabarP(String cadena){
+        try{
+        FileWriter archivoP = new FileWriter("Registro_Pacientes.xml", true);
+        try(BufferedWriter almacenP = new BufferedWriter(archivoP)){
+        almacenP.write(cadena + "\n");
+        almacenP.close();        
+                }
+        archivoP.close();
+        }catch(Exception ex){
+            
+        }
+        }
+    
+    public ArrayList<String> LeerP(){
+        ArrayList<String> datosP = new ArrayList<>();
+        try{
+            FileReader archivoP = new FileReader("Registro_Pacientes.xml");
+            BufferedReader lecturaP = new BufferedReader(archivoP);
+            String cadena;
+            while ((cadena = lecturaP.readLine())!= null){
+                datosP.add(cadena);
+            }
+        }catch(Exception ex){}
+        return datosP;
+    }
+    
+        public void GrabarD(String cadena){
+        try{
+        FileWriter archivoD = new FileWriter("Registro_Doctores.xml", true);
+        try(BufferedWriter almacenD = new BufferedWriter(archivoD)){
+        almacenD.write(cadena + "\n");
+        almacenD.close();        
+                }
+        archivoD.close();
+        }catch(Exception ex){
+            
+        }
+        }
+    
+    public ArrayList<String> LeerD(){
+        ArrayList<String> datosD = new ArrayList<>();
+        try{
+            FileReader archivoD = new FileReader("Registro_Doctores.xml");
+            BufferedReader lecturaD = new BufferedReader(archivoD);
+            String cadena;
+            while ((cadena = lecturaD.readLine())!= null){
+                datosD.add(cadena);
+            }
+        }catch(Exception ex){}
+        return datosD;
+    }
+    
+    public void GrabarC(String cadena){
+        try{
+        FileWriter archivoC = new FileWriter("Registro_Citas.xml", true);
+        try(BufferedWriter almacenC = new BufferedWriter(archivoC)){
+        almacenC.write(cadena + "\n");
+        almacenC.close();        
+                }
+        archivoC.close();
+        }catch(Exception ex){
+            
+        }
+        }
+    
+    public ArrayList<String> LeerC(){
+        ArrayList<String> datosC = new ArrayList<>();
+        try{
+            FileReader archivoC = new FileReader("Registro_Citas.xml");
+            BufferedReader lecturaC = new BufferedReader(archivoC);
+            String cadena;
+            while ((cadena = lecturaC.readLine())!= null){
+                datosC.add(cadena);
+            }
+        }catch(Exception ex){}
+        return datosC;
+    }
+    
+    public void GrabarU(String cadena){
+        try{
+        FileWriter archivoU = new FileWriter("Registro_Usuario.xml", true);
+        try(BufferedWriter almacenU = new BufferedWriter(archivoU)){
+        almacenU.write(cadena + "\n");
+        almacenU.close();        
+                }
+        archivoU.close();
+        }catch(Exception ex){
+            
+        }
+        }
+    
+    public ArrayList<String> LeerU(){
+        ArrayList<String> datosU = new ArrayList<>();
+        try{
+            FileReader archivoU = new FileReader("Registro_Citas.xml");
+            BufferedReader lecturaU = new BufferedReader(archivoU);
+            String cadena;
+            while ((cadena = lecturaU.readLine())!= null){
+                datosU.add(cadena);
+            }
+        }catch(Exception ex){}
+        return datosU;
+    }
+}
